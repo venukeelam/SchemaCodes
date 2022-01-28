@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SchemaRegistry/src/main/resources/AvroSerializeSchema&apos; to &apos;AvroSerializeSchema.avsc&apos;" description="Rename resource &apos;AvroSerializeSchema&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/AvroSerializeSchema" name="AvroSerializeSchema.avsc" stamp="1643379318165" updateReferences="true"/>
+</session>
