@@ -1,0 +1,15 @@
+{
+  "fields": [
+    {
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "name": "stream",
+      "type": "string"
+    }
+  ],
+  "name": "Former",
+  "namespace": "stringserializer",
+  "type": "record"
+}
