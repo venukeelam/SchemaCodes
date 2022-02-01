@@ -1,0 +1,19 @@
+{
+  "fields": [
+    {
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "name": "stream",
+      "type": "string"
+    },
+    {
+      "name": "id",
+      "type": "int"
+    }
+  ],
+  "name": "Student",
+  "namespace": "avroserializer",
+  "type": "record"
+}

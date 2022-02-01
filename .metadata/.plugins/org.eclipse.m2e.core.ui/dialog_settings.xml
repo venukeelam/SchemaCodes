@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\SchemaSpace"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -43,11 +44,18 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="schemaRegistryConsumers"/>
+			<item value="SchemaConsumers"/>
+			<item value="SchemaConsumer"/>
 			<item value="AvroSerializer"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="SchemaConsumers"/>
+			<item value="com.kmc.consumers"/>
+			<item value="com.kmc.schemaconsumers"/>
+			<item value="org.kmc.schemaconsumers"/>
 			<item value="SchemaRegistry"/>
 		</list>
 		<list key="projectNameTemplate">

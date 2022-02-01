@@ -17,15 +17,16 @@ public class AvroProducer
 	        properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,StringSerializer.class.getName());
 	        properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,KafkaAvroSerializer.class.getName());
 	        properties.setProperty("schema.registry.url","localhost:8081");
-	        
+	       // properties.setProperty("auto.register.schemas", "false");
 	        KafkaProducer<String,Student> kafkaProducer=new KafkaProducer<String,Student>(properties);
 
 	        String topic="AvroSchemaTopic";
 
 	        Student student=Student
 	                .newBuilder()
-	                .setName("venu")
+	                .setName("venu ")
 	                .setStream("cse")
+	                .setAge(23)
 	                .build();
 
 	        ProducerRecord<String,Student> producerRecord=new ProducerRecord<String,Student>(topic,student);
