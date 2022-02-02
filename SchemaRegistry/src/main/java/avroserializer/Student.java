@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Student extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 274832211583558251L;
+  private static final long serialVersionUID = -2676698247306306514L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"avroserializer\",\"fields\":[{\"name\":\"Name\",\"type\":\"string\"},{\"name\":\"stream\",\"type\":\"string\"},{\"name\":\"age\",\"type\":\"int\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"avroserializer\",\"fields\":[{\"name\":\"Name\",\"type\":\"string\"},{\"name\":\"stream\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,7 +75,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
 
   private java.lang.CharSequence Name;
   private java.lang.CharSequence stream;
-  private int age;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -88,12 +87,10 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    * All-args constructor.
    * @param Name The new value for Name
    * @param stream The new value for stream
-   * @param age The new value for age
    */
-  public Student(java.lang.CharSequence Name, java.lang.CharSequence stream, java.lang.Integer age) {
+  public Student(java.lang.CharSequence Name, java.lang.CharSequence stream) {
     this.Name = Name;
     this.stream = stream;
-    this.age = age;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -103,7 +100,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: return Name;
     case 1: return stream;
-    case 2: return age;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -114,7 +110,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: Name = (java.lang.CharSequence)value$; break;
     case 1: stream = (java.lang.CharSequence)value$; break;
-    case 2: age = (java.lang.Integer)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -151,23 +146,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    */
   public void setStream(java.lang.CharSequence value) {
     this.stream = value;
-  }
-
-  /**
-   * Gets the value of the 'age' field.
-   * @return The value of the 'age' field.
-   */
-  public int getAge() {
-    return age;
-  }
-
-
-  /**
-   * Sets the value of the 'age' field.
-   * @param value the value to set.
-   */
-  public void setAge(int value) {
-    this.age = value;
   }
 
   /**
@@ -213,7 +191,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
 
     private java.lang.CharSequence Name;
     private java.lang.CharSequence stream;
-    private int age;
 
     /** Creates a new Builder */
     private Builder() {
@@ -234,10 +211,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
         this.stream = data().deepCopy(fields()[1].schema(), other.stream);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.age)) {
-        this.age = data().deepCopy(fields()[2].schema(), other.age);
-        fieldSetFlags()[2] = other.fieldSetFlags()[2];
-      }
     }
 
     /**
@@ -253,10 +226,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       if (isValidValue(fields()[1], other.stream)) {
         this.stream = data().deepCopy(fields()[1].schema(), other.stream);
         fieldSetFlags()[1] = true;
-      }
-      if (isValidValue(fields()[2], other.age)) {
-        this.age = data().deepCopy(fields()[2].schema(), other.age);
-        fieldSetFlags()[2] = true;
       }
     }
 
@@ -340,45 +309,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
-    /**
-      * Gets the value of the 'age' field.
-      * @return The value.
-      */
-    public int getAge() {
-      return age;
-    }
-
-
-    /**
-      * Sets the value of the 'age' field.
-      * @param value The value of 'age'.
-      * @return This builder.
-      */
-    public avroserializer.Student.Builder setAge(int value) {
-      validate(fields()[2], value);
-      this.age = value;
-      fieldSetFlags()[2] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'age' field has been set.
-      * @return True if the 'age' field has been set, false otherwise.
-      */
-    public boolean hasAge() {
-      return fieldSetFlags()[2];
-    }
-
-
-    /**
-      * Clears the value of the 'age' field.
-      * @return This builder.
-      */
-    public avroserializer.Student.Builder clearAge() {
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
     @Override
     @SuppressWarnings("unchecked")
     public Student build() {
@@ -386,7 +316,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
         Student record = new Student();
         record.Name = fieldSetFlags()[0] ? this.Name : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.stream = fieldSetFlags()[1] ? this.stream : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.age = fieldSetFlags()[2] ? this.age : (java.lang.Integer) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -423,8 +352,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
 
     out.writeString(this.stream);
 
-    out.writeInt(this.age);
-
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -436,10 +363,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
 
       this.stream = in.readString(this.stream instanceof Utf8 ? (Utf8)this.stream : null);
 
-      this.age = in.readInt();
-
     } else {
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 2; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.Name = in.readString(this.Name instanceof Utf8 ? (Utf8)this.Name : null);
@@ -447,10 +372,6 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
 
         case 1:
           this.stream = in.readString(this.stream instanceof Utf8 ? (Utf8)this.stream : null);
-          break;
-
-        case 2:
-          this.age = in.readInt();
           break;
 
         default:

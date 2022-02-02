@@ -7,10 +7,6 @@
     {
       "name": "stream",
       "type": "string"
-    },
-    {
-      "name": "id",
-      "type": "int"
     }
   ],
   "name": "Student",

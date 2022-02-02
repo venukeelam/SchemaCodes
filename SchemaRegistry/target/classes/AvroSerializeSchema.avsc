@@ -7,14 +7,6 @@
     {
       "name": "stream",
       "type": "string"
-    },
-    {
-      "name": "age",
-      "type": "int"
-    },
-    {
-      "name": "id",
-      "type": "int"
     }
   ],
   "name": "Student",
