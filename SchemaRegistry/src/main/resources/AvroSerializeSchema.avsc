@@ -9,7 +9,7 @@
       "type": "string"
     }
   ],
-  "name": "Student",
-  "namespace": "avroserializer",
+  "name": "StudentConsumer",
+  "namespace": "avroDeserializer",
   "type": "record"
 }
