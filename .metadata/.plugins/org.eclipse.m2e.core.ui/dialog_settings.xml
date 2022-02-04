@@ -44,6 +44,8 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="Facebook"/>
+			<item value="Google"/>
 			<item value="schemaRegistryConsumers"/>
 			<item value="SchemaConsumers"/>
 			<item value="SchemaConsumer"/>
@@ -52,6 +54,10 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="FacebookActsConsumer"/>
+			<item value="GoogleActsProducer"/>
+			<item value="FacebookAsConsumer"/>
+			<item value="GoogleAsProducer"/>
 			<item value="SchemaConsumers"/>
 			<item value="com.kmc.consumers"/>
 			<item value="com.kmc.schemaconsumers"/>
