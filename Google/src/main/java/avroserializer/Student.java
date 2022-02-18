@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Student extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3928532243205659836L;
+  private static final long serialVersionUID = -3303740269074475714L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"avroserializer\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Student\",\"namespace\":\"avroserializer\",\"fields\":[{\"name\":\"id\",\"type\":\"string\",\"default\":\"true\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"mobileno\",\"type\":\"string\",\"default\":\"unknown\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -74,6 +74,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   }
 
   private java.lang.CharSequence id;
+  private java.lang.CharSequence name;
+  private java.lang.CharSequence mobileno;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -85,9 +87,13 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   /**
    * All-args constructor.
    * @param id The new value for id
+   * @param name The new value for name
+   * @param mobileno The new value for mobileno
    */
-  public Student(java.lang.CharSequence id) {
+  public Student(java.lang.CharSequence id, java.lang.CharSequence name, java.lang.CharSequence mobileno) {
     this.id = id;
+    this.name = name;
+    this.mobileno = mobileno;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -96,6 +102,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   public java.lang.Object get(int field$) {
     switch (field$) {
     case 0: return id;
+    case 1: return name;
+    case 2: return mobileno;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -105,6 +113,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
+    case 1: name = (java.lang.CharSequence)value$; break;
+    case 2: mobileno = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -124,6 +134,40 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
    */
   public void setId(java.lang.CharSequence value) {
     this.id = value;
+  }
+
+  /**
+   * Gets the value of the 'name' field.
+   * @return The value of the 'name' field.
+   */
+  public java.lang.CharSequence getName() {
+    return name;
+  }
+
+
+  /**
+   * Sets the value of the 'name' field.
+   * @param value the value to set.
+   */
+  public void setName(java.lang.CharSequence value) {
+    this.name = value;
+  }
+
+  /**
+   * Gets the value of the 'mobileno' field.
+   * @return The value of the 'mobileno' field.
+   */
+  public java.lang.CharSequence getMobileno() {
+    return mobileno;
+  }
+
+
+  /**
+   * Sets the value of the 'mobileno' field.
+   * @param value the value to set.
+   */
+  public void setMobileno(java.lang.CharSequence value) {
+    this.mobileno = value;
   }
 
   /**
@@ -168,6 +212,8 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
     implements org.apache.avro.data.RecordBuilder<Student> {
 
     private java.lang.CharSequence id;
+    private java.lang.CharSequence name;
+    private java.lang.CharSequence mobileno;
 
     /** Creates a new Builder */
     private Builder() {
@@ -184,6 +230,14 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
+      if (isValidValue(fields()[1], other.name)) {
+        this.name = data().deepCopy(fields()[1].schema(), other.name);
+        fieldSetFlags()[1] = other.fieldSetFlags()[1];
+      }
+      if (isValidValue(fields()[2], other.mobileno)) {
+        this.mobileno = data().deepCopy(fields()[2].schema(), other.mobileno);
+        fieldSetFlags()[2] = other.fieldSetFlags()[2];
+      }
     }
 
     /**
@@ -195,6 +249,14 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
+      }
+      if (isValidValue(fields()[1], other.name)) {
+        this.name = data().deepCopy(fields()[1].schema(), other.name);
+        fieldSetFlags()[1] = true;
+      }
+      if (isValidValue(fields()[2], other.mobileno)) {
+        this.mobileno = data().deepCopy(fields()[2].schema(), other.mobileno);
+        fieldSetFlags()[2] = true;
       }
     }
 
@@ -238,12 +300,94 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
       return this;
     }
 
+    /**
+      * Gets the value of the 'name' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getName() {
+      return name;
+    }
+
+
+    /**
+      * Sets the value of the 'name' field.
+      * @param value The value of 'name'.
+      * @return This builder.
+      */
+    public avroserializer.Student.Builder setName(java.lang.CharSequence value) {
+      validate(fields()[1], value);
+      this.name = value;
+      fieldSetFlags()[1] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'name' field has been set.
+      * @return True if the 'name' field has been set, false otherwise.
+      */
+    public boolean hasName() {
+      return fieldSetFlags()[1];
+    }
+
+
+    /**
+      * Clears the value of the 'name' field.
+      * @return This builder.
+      */
+    public avroserializer.Student.Builder clearName() {
+      name = null;
+      fieldSetFlags()[1] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'mobileno' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getMobileno() {
+      return mobileno;
+    }
+
+
+    /**
+      * Sets the value of the 'mobileno' field.
+      * @param value The value of 'mobileno'.
+      * @return This builder.
+      */
+    public avroserializer.Student.Builder setMobileno(java.lang.CharSequence value) {
+      validate(fields()[2], value);
+      this.mobileno = value;
+      fieldSetFlags()[2] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'mobileno' field has been set.
+      * @return True if the 'mobileno' field has been set, false otherwise.
+      */
+    public boolean hasMobileno() {
+      return fieldSetFlags()[2];
+    }
+
+
+    /**
+      * Clears the value of the 'mobileno' field.
+      * @return This builder.
+      */
+    public avroserializer.Student.Builder clearMobileno() {
+      mobileno = null;
+      fieldSetFlags()[2] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public Student build() {
       try {
         Student record = new Student();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
+        record.name = fieldSetFlags()[1] ? this.name : (java.lang.CharSequence) defaultValue(fields()[1]);
+        record.mobileno = fieldSetFlags()[2] ? this.mobileno : (java.lang.CharSequence) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -278,6 +422,10 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
   {
     out.writeString(this.id);
 
+    out.writeString(this.name);
+
+    out.writeString(this.mobileno);
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -287,11 +435,23 @@ public class Student extends org.apache.avro.specific.SpecificRecordBase impleme
     if (fieldOrder == null) {
       this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
 
+      this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
+
+      this.mobileno = in.readString(this.mobileno instanceof Utf8 ? (Utf8)this.mobileno : null);
+
     } else {
-      for (int i = 0; i < 1; i++) {
+      for (int i = 0; i < 3; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
+          break;
+
+        case 1:
+          this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
+          break;
+
+        case 2:
+          this.mobileno = in.readString(this.mobileno instanceof Utf8 ? (Utf8)this.mobileno : null);
           break;
 
         default:

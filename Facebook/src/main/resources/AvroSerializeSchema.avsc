@@ -4,6 +4,11 @@
     {
       "name": "id",
       "type": "string"
+    },
+    {
+      "name": "mobileno",
+      "type": "string",
+      "default":"unknown"
     }
   ],
   "name": "Student",

@@ -25,16 +25,19 @@ public class AvroProducer
 
 	        Student student=Student
 	                .newBuilder()
-	                
-	                .setId("16A41a0522")
+	                .setName("venu keelam")
+	                .setId("5322")
+	                .setMobileno("+91 986juhpppppppppppljjkkkkkkkkkkkkkj60205")
 	                .build();
 
 	        ProducerRecord<String,Student> producerRecord=new ProducerRecord<String,Student>(topic,student);
 	        System.out.println(student);
 	    
+try {
 
 
-	        kafkaProducer.send(producerRecord, new Callback()
+
+	        kafkaProducer.send(producerRecord, new Callback() 
 	        {
 	            public void onCompletion(RecordMetadata metadata, Exception exception)
 	            {
@@ -44,11 +47,20 @@ public class AvroProducer
 	                }
 	                else
 	                {
-	                   exception.printStackTrace(); 
+	           
+	                   
+	                   
 	                }
 
 	            }
 	        });
+}
+
+catch (Exception e)
+{
+	
+	// TODO: handle exception
+}
 	        kafkaProducer.flush();
 	        kafkaProducer.close();
 	    }

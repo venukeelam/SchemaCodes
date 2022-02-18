@@ -3,8 +3,19 @@
     
     {
       "name": "id",
+      "type": "string",
+      "default":"true"
+    },
+    {
+      "name": "name",
       "type": "string"
+    },
+    {
+      "name": "mobileno",
+      "type": "string",
+      "default":"unknown"
     }
+    
   ],
   "name": "Student",
   "namespace": "avroserializer",
